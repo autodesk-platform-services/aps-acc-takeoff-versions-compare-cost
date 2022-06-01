@@ -33,7 +33,7 @@ The sample also provides the ability to import the generated budgets directly in
 
 
 ## Live Demo
-[https://forge-takeoff2cost-versions.difference.herokuapp.com/](https://forge-takeoff2cost-versions.difference.herokuapp.com/)
+[https://forge-takeoff2cost-v2.herokuapp.com/](https://forge-takeoff2cost-v2.herokuapp.com/)
 
 
 # Web App Setup
