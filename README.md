@@ -1,4 +1,4 @@
-# forge-takeoff2cost-v2
+# forge-takeoff2cost-versions.difference
 
 [![Node.js](https://img.shields.io/badge/Node.js-8.0-blue.svg)](https://nodejs.org/)
 [![npm](https://img.shields.io/badge/npm-4.0-blue.svg)](https://www.npmjs.com/)
@@ -33,7 +33,7 @@ The sample also provides the ability to import the generated budgets directly in
 
 
 ## Live Demo
-[https://forge-takeoff2cost-v2.herokuapp.com/](https://forge-takeoff2cost-v2.herokuapp.com/)
+[https://forge-takeoff2cost-versions.difference.herokuapp.com/](https://forge-takeoff2cost-versions.difference.herokuapp.com/)
 
 
 # Web App Setup
@@ -57,7 +57,7 @@ Install [NodeJS](https://nodejs.org), version 8 or newer.
 
 Clone this project or download it (this `nodejs` branch only). It's recommended to install [GitHub desktop](https://desktop.github.com/). To clone it via command line, use the following (**Terminal** on MacOSX/Linux, **Git Shell** on Windows):
 
-    git clone https://github.com/Autodesk-Forge/forge-takeoff2cost-v2
+    git clone https://github.com/Autodesk-Forge/forge-takeoff2cost-versions.difference
 
 Install the required packages using `npm install`.
 
@@ -133,7 +133,7 @@ Open the browser: [http://localhost:3000](http://localhost:3000).
 
 To deploy this application to Heroku, the **Callback URL** for Forge must use your `.herokuapp.com` address. After clicking on the button below, at the Heroku Create New App page, set your Client ID, Secret and Callback URL for Forge.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Autodesk-Forge/forge-takeoff2cost-v2)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Autodesk-Forge/forge-takeoff2cost-versions.difference)
 
 
 ## Limitation
