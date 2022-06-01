@@ -27,8 +27,7 @@ const SocketEnum = {
 };
 
 //socket host 
-const HOST_URL = window.location.host;
-var socketio = io.connect('http://' + HOST_URL);
+var socketio = io();
 socketio.on(SocketEnum.INDEX_TOPIC, async (d) => {
   const jsonData = JSON.parse(d)
 
