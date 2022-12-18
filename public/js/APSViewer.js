@@ -1,6 +1,6 @@
 ﻿/////////////////////////////////////////////////////////////////////
 // Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Written by Autodesk Partner Development
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -16,9 +16,9 @@
 // UNINTERRUPTED OR ERROR FREE.
 /////////////////////////////////////////////////////////////////////
 
-var forgeViewer = null;
-var forgeViewer_left = null;
-var forgeViewer_right = null;
+var apsViewer = null;
+var apsViewer_left = null;
+var apsViewer_right = null;
 
 var objectIds = [];
 
@@ -32,9 +32,9 @@ var VIEWER_ITEM = {
 
 function initViewer(viewerItem) {
 
-  if( viewerItem == VIEWER_ITEM.MAIN_VIEWER && forgeViewer!= null
-    ||  viewerItem == VIEWER_ITEM.LEFT_VIEWER && forgeViewer_left!= null
-    || viewerItem == VIEWER_ITEM.RIGHT_VIEWER && forgeViewer_right!= null )
+  if( viewerItem == VIEWER_ITEM.MAIN_VIEWER && apsViewer!= null
+    ||  viewerItem == VIEWER_ITEM.LEFT_VIEWER && apsViewer_left!= null
+    || viewerItem == VIEWER_ITEM.RIGHT_VIEWER && apsViewer_right!= null )
     return;
 
   var options = {
@@ -48,19 +48,19 @@ function initViewer(viewerItem) {
 
     switch (viewerItem) {
       case VIEWER_ITEM.MAIN_VIEWER: {
-          forgeViewer = new Autodesk.Viewing.GuiViewer3D(document.getElementById('forgeViewer'));
-          forgeViewer.start();
+          apsViewer = new Autodesk.Viewing.GuiViewer3D(document.getElementById('apsViewer'));
+          apsViewer.start();
         break;
       }
       case VIEWER_ITEM.LEFT_VIEWER: {
-          forgeViewer_left = new Autodesk.Viewing.GuiViewer3D(document.getElementById('forgeViewer_left'));
-          forgeViewer_left.start();
+          apsViewer_left = new Autodesk.Viewing.GuiViewer3D(document.getElementById('apsViewer_left'));
+          apsViewer_left.start();
         break;
 
       }
       case VIEWER_ITEM.RIGHT_VIEWER: {
-          forgeViewer_right = new Autodesk.Viewing.GuiViewer3D(document.getElementById('forgeViewer_right'));
-          forgeViewer_right.start();
+          apsViewer_right = new Autodesk.Viewing.GuiViewer3D(document.getElementById('apsViewer_right'));
+          apsViewer_right.start();
         break;
       }
     }
@@ -101,7 +101,7 @@ function launchViewer(viewer, urn, object_id = null) {
 
 
 async function getAccessToken(callback) {
-  const resp = await fetch('/api/forge/oauth/token');
+  const resp = await fetch('/api/aps/oauth/token');
   if (resp.ok) {
     const { access_token, expires_in } = await resp.json();
     callback(access_token, expires_in);

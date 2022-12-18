@@ -1,6 +1,6 @@
 ﻿/////////////////////////////////////////////////////////////////////
 // Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Written by Autodesk Partner Development
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -22,7 +22,7 @@
 $(document).ready(function () {
   function showUser() {
     jQuery.ajax({
-      url: '/api/forge/user/profile',
+      url: '/api/aps/user/profile',
       success: function (profile) {
         var img = '<img src="' + profile.picture + '" height="30px">';
         $('#userInfo').html(img + profile.name);

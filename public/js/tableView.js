@@ -1,6 +1,6 @@
 ﻿/////////////////////////////////////////////////////////////////////
 // Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Written by Autodesk Partner Development
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -40,21 +40,21 @@ class TableView {
     clickHandler(e, row) {
         //when one item of table view is clicked.
         //highlight this element
-        forgeViewer_right.clearThemingColors(forgeViewer_right.model);
-        forgeViewer_right.showAll()
-        forgeViewer_left.clearThemingColors(forgeViewer_left.model);
-        forgeViewer_left.showAll()
+        apsViewer_right.clearThemingColors(apsViewer_right.model);
+        apsViewer_right.showAll()
+        apsViewer_left.clearThemingColors(apsViewer_left.model);
+        apsViewer_left.showAll()
 
         if( this.elementType == ElementType.CHANGED ){
-            forgeViewer_right.setThemingColor(row.svf2Id, new THREE.Vector4(0, 0, 1, 1))
-            forgeViewer_left.setThemingColor(row.svf2Id, new THREE.Vector4(0, 0, 1, 1))
-            forgeViewer_right.isolate(row.svf2Id)
-            forgeViewer_left.isolate(row.svf2Id)
-            forgeViewer_right.fitToView(row.svf2Id)
-            forgeViewer_left.fitToView(row.svf2Id)
+            apsViewer_right.setThemingColor(row.svf2Id, new THREE.Vector4(0, 0, 1, 1))
+            apsViewer_left.setThemingColor(row.svf2Id, new THREE.Vector4(0, 0, 1, 1))
+            apsViewer_right.isolate(row.svf2Id)
+            apsViewer_left.isolate(row.svf2Id)
+            apsViewer_right.fitToView(row.svf2Id)
+            apsViewer_left.fitToView(row.svf2Id)
         }else{
-            const viewerWithoutElement = this.elementType==ElementType.ADDED ?forgeViewer_left:forgeViewer_right;
-            const viewerWithElement    = this.elementType==ElementType.ADDED ?forgeViewer_right:forgeViewer_left;
+            const viewerWithoutElement = this.elementType==ElementType.ADDED ?apsViewer_left:apsViewer_right;
+            const viewerWithElement    = this.elementType==ElementType.ADDED ?apsViewer_right:apsViewer_left;
             viewerWithElement.setThemingColor(row.svf2Id, this.elementType == ElementType.ADDED ? new THREE.Vector4(0, 1, 0, 1) : new THREE.Vector4(1, 0, 0, 1));
             //zooming to the element by bounding-box 
             const selectedItem = this.itemsForShow.find(i => i.svf2Id == row.svf2Id);

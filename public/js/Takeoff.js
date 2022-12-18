@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////////////////////
 // Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Written by Autodesk Partner Development
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -24,7 +24,7 @@ var costMgrInstance = null;
 ///////////////////////////////////////////////////////////////////////
 class PriceBook {
   constructor() {
-    this.priceBookUrl = '/api/forge/pricebook/items';
+    this.priceBookUrl = '/api/aps/pricebook/items';
     this.priceInfo = [];
   }
 
@@ -194,7 +194,7 @@ class PackageCostManager {
     }
     // Get the takeoff types for the package
     let takeoffTypeList = [];
-    const takeoffTypesUrl = '/api/forge/takeoff/' + encodeURIComponent(params[0]) + '/packages/'+ encodeURIComponent(params[params.length-1])+'/types';
+    const takeoffTypesUrl = '/api/aps/takeoff/' + encodeURIComponent(params[0]) + '/packages/'+ encodeURIComponent(params[params.length-1])+'/types';
     try {
       takeoffTypeList = await apiClientAsync(takeoffTypesUrl);
     } catch (err) {
@@ -203,7 +203,7 @@ class PackageCostManager {
     }
  
     let result = null;
-    const takeoffItemsUrl = '/api/forge/takeoff/' + encodeURIComponent(params[0]) + '/packages/'+ encodeURIComponent(params[params.length-1])+'/items';
+    const takeoffItemsUrl = '/api/aps/takeoff/' + encodeURIComponent(params[0]) + '/packages/'+ encodeURIComponent(params[params.length-1])+'/items';
     try {
       result = await apiClientAsync(takeoffItemsUrl);
     } catch (err) {
@@ -256,7 +256,7 @@ class PackageCostManager {
 
     let result = null;
     const costContainerId = $('#labelCostContainer').text();
-    const costBudgetCodeTemplateUrl = '/api/forge/cost/' + costContainerId + '/budgetcode';
+    const costBudgetCodeTemplateUrl = '/api/aps/cost/' + costContainerId + '/budgetcode';
     try {
       result = await apiClientAsync(costBudgetCodeTemplateUrl);
     } catch (err) {
@@ -279,7 +279,7 @@ class PackageCostManager {
       append: false
     }
 
-    const requestUrl = '/api/forge/cost/budgets';
+    const requestUrl = '/api/aps/cost/budgets';
     const requestBody = {
       cost_container_id: costContainerId,
       data: budgetBody

@@ -1,6 +1,6 @@
 ﻿/////////////////////////////////////////////////////////////////////
 // Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Written by Autodesk Partner Development
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -146,39 +146,39 @@ class ChangedItem {
       columns: this.columns,
       onClickRow: function (row, element, field) {
         const svf2Id = row.svf2Id
-        forgeViewer_left.clearThemingColors(forgeViewer_left.model);
-        forgeViewer_left.showAll()
-        forgeViewer_right.clearThemingColors(forgeViewer_right.model);
-        forgeViewer_right.showAll()
+        apsViewer_left.clearThemingColors(apsViewer_left.model);
+        apsViewer_left.showAll()
+        apsViewer_right.clearThemingColors(apsViewer_right.model);
+        apsViewer_right.showAll()
 
         if( row.after != 0 ){
-          forgeViewer_right.setThemingColor(svf2Id, new THREE.Vector4(0, 0, 1, 1))
-          forgeViewer_left.setThemingColor(svf2Id, new THREE.Vector4(0, 0, 1, 1))
+          apsViewer_right.setThemingColor(svf2Id, new THREE.Vector4(0, 0, 1, 1))
+          apsViewer_left.setThemingColor(svf2Id, new THREE.Vector4(0, 0, 1, 1))
   
-          forgeViewer_right.isolate(svf2Id)
-          forgeViewer_left.isolate(svf2Id)
+          apsViewer_right.isolate(svf2Id)
+          apsViewer_left.isolate(svf2Id)
   
-          forgeViewer_right.fitToView(svf2Id)
-          forgeViewer_left.fitToView(svf2Id)
+          apsViewer_right.fitToView(svf2Id)
+          apsViewer_left.fitToView(svf2Id)
         }else{
-          forgeViewer_left.setThemingColor(row.svf2Id, new THREE.Vector4(1, 0, 0, 1))   
+          apsViewer_left.setThemingColor(row.svf2Id, new THREE.Vector4(1, 0, 0, 1))   
 
           //zooming to the element by bounding-box 
           const selectedItem = global_ChangedItem._items.find(i => i.svf2Id == row.svf2Id)
           if (selectedItem && selectedItem.prev.bboxMax) {
                var fragbBox = new THREE.Box3();   
-              fragbBox.max.x = selectedItem.prev.bboxMax.x - forgeViewer_right.model.getGlobalOffset().x
-              fragbBox.max.y = selectedItem.prev.bboxMax.y - forgeViewer_right.model.getGlobalOffset().y
-              fragbBox.max.z = selectedItem.prev.bboxMax.z - forgeViewer_right.model.getGlobalOffset().z
-              fragbBox.min.x = selectedItem.prev.bboxMin.x - forgeViewer_right.model.getGlobalOffset().x
-              fragbBox.min.y = selectedItem.prev.bboxMin.y - forgeViewer_right.model.getGlobalOffset().y
-              fragbBox.min.z = selectedItem.prev.bboxMin.z - forgeViewer_right.model.getGlobalOffset().z
-              var fragbBox = getBoundingBoxByViewerAPI(forgeViewer_left, row.svf2Id)
+              fragbBox.max.x = selectedItem.prev.bboxMax.x - apsViewer_right.model.getGlobalOffset().x
+              fragbBox.max.y = selectedItem.prev.bboxMax.y - apsViewer_right.model.getGlobalOffset().y
+              fragbBox.max.z = selectedItem.prev.bboxMax.z - apsViewer_right.model.getGlobalOffset().z
+              fragbBox.min.x = selectedItem.prev.bboxMin.x - apsViewer_right.model.getGlobalOffset().x
+              fragbBox.min.y = selectedItem.prev.bboxMin.y - apsViewer_right.model.getGlobalOffset().y
+              fragbBox.min.z = selectedItem.prev.bboxMin.z - apsViewer_right.model.getGlobalOffset().z
+              var fragbBox = getBoundingBoxByViewerAPI(apsViewer_left, row.svf2Id)
               fragbBox.expandByScalar(3) 
-              forgeViewer_left.navigation.fitBounds(true, fragbBox)
-              forgeViewer_right.navigation.fitBounds(true, fragbBox)
+              apsViewer_left.navigation.fitBounds(true, fragbBox)
+              apsViewer_right.navigation.fitBounds(true, fragbBox)
           }else{
-            forgeViewer_left.isolate(row.svf2Id)
+            apsViewer_left.isolate(row.svf2Id)
           }
         }
       }
