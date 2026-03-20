@@ -141,7 +141,7 @@ To deploy this application to Heroku, the **Callback URL** for APS must use your
 
 
 ## Tips & Tricks
-- **Cannot see my Forma projects**: Make sure to provision the APS App Client ID within the Forma hub to get access to document, ACC indeed uses BIM 360 Admin Settings, this requires the Hub Admin permission.[learn more here](https://aps.autodesk.com/blog/bim-360-docs-provisioning-forge-apps). 
+- **Cannot see my Forma projects**: Make sure to provision the APS App Client ID within the Forma hub to get access to document, Autodesk Forma indeed uses BIM 360 Admin Settings, this requires the Hub Admin permission.[learn more here](https://aps.autodesk.com/blog/bim-360-docs-provisioning-forge-apps). 
 
 - Only Forma projects are listed, BIM 360 projects are not supported.
 
