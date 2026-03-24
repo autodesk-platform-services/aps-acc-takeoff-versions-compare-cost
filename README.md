@@ -1,15 +1,15 @@
-# Autodesk Forma Takeoff to Cost with Version Compare Sample
+# Forma for Construction Takeoff to Cost with Version Compare Sample
 
 [![Node.js](https://img.shields.io/badge/Node.js-14.0-blue.svg)](https://nodejs.org/)
 [![npm](https://img.shields.io/badge/npm-6.0-blue.svg)](https://www.npmjs.com/)
 ![Platforms](https://img.shields.io/badge/Web-Windows%20%7C%20MacOS%20%7C%20Linux-lightgray.svg)
 
 [![OAuth2](https://img.shields.io/badge/OAuth2-v2-green.svg)](http://developer.autodesk.com/)
-[![Data-Management](https://img.shields.io/badge/Data%20Management-v1-green.svg)](http://developer.autodesk.com/)
-[![Forma](https://img.shields.io/badge/Forma-v1-green.svg)](http://developer.autodesk.com/)
+[![Forma Data-Management](https://img.shields.io/badge/Forma%20Data%20Management-v1-green.svg)](http://developer.autodesk.com/)
+[![Forma for Construction](https://img.shields.io/badge/Forma%20for%20Construction-v1-green.svg)](http://developer.autodesk.com/)
 
 [![Cost Management](https://img.shields.io/badge/Cost%20Management-v1-green.svg)](http://developer.autodesk.com/)
-[![Takeoff](https://img.shields.io/badge/Takeoff-v1-green.svg)](http://developer.autodesk.com/)
+[![Forma Takeoff](https://img.shields.io/badge/Forma%20Takeoff-v1-green.svg)](http://developer.autodesk.com/)
 [![Model Properties](https://img.shields.io/badge/Model%20Properties-v1-green.svg)](http://developer.autodesk.com/)
 
 [![MIT](https://img.shields.io/badge/License-MIT-blue.svg)](http://opensource.org/licenses/MIT)
@@ -17,7 +17,7 @@
 
 
 ## Description
-This sample demonstrates displaying package information from Autodesk Takeoff product, and calculate the budget based on the quantity of takeoff items and price which is stored in database.
+This sample demonstrates displaying package information from Forma Takeoff product, and calculate the budget based on the quantity of takeoff items and price which is stored in database.
 
 The takeoff items under package are grouped by documents,for 3D models, you can also do the model comparasion using Model Properties API if the current document is not the latest version, and the sample will provide you the estimated cost change for the latest version, it helps user to make decision if they want to move to latest version.
 
@@ -39,9 +39,9 @@ The sample also provides the ability to import the generated budgets directly in
 ## Prerequisites
 
 1. **APS Account**: Learn how to create a APS Account, activate subscription and create an app at [this tutorial](https://tutorials.autodesk.io/). 
-2. **Autodesk Forma Hub**: must be Hub Admin to add the app integration. [Learn about provisioning](https://aps.autodesk.com/blog/bim-360-docs-provisioning-forge-apps). 
-3. **Autodesk Takeoff**: Create Forma project, activate Takeoff, get started with Autodesk Takeoff according to [the guide](https://help.autodesk.com/view/TAKEOFF/ENU/?guid=Getting_Started_Takeoff)
-4. **Cost Management**: Create Forma project, activate Cost Management, setup project to create **Budget Code Template** for Cost Management according to [the guide](https://help.autodesk.com/view/BUILD/ENU/?guid=Cost_Income_Settings)
+2. **Forma for Construction Account**: must be Hub Admin to add the app integration. [Learn about provisioning](https://aps.autodesk.com/blog/bim-360-docs-provisioning-forge-apps). 
+3. **Autodesk Takeoff**: Create Forma for Construction project, activate Takeoff, get started with Autodesk Takeoff according to [the guide](https://help.autodesk.com/view/TAKEOFF/ENU/?guid=Getting_Started_Takeoff)
+4. **Cost Management**: Create Forma for Construction project, activate Cost Management, setup project to create **Budget Code Template** for Cost Management according to [the guide](https://help.autodesk.com/view/BUILD/ENU/?guid=Cost_Income_Settings)
 4. **Node.js**: basic knowledge with [**Node.js**](https://nodejs.org/en/).
 5. **JavaScript** basic knowledge with **jQuery**
 6. **MongoDB**: noSQL database, learn more. Or use a online version via Mongo Altas (this is used on this sample)
@@ -119,12 +119,12 @@ Open the browser: [http://localhost:3000](http://localhost:3000).
 
 **Please follow the steps to setup the app:**
 
-1. Make sure to [Create Forma project, activate Takeoff and Cost Management, setup project for Cost Management](https://help.autodesk.com/view/DOCS/ENU/?guid=Create_Project), a **Budget Code Template** must be created before adding or importing budget items.
+1. Make sure to [Create Forma for Construction project, activate Takeoff and Cost Management, setup project for Cost Management](https://help.autodesk.com/view/DOCS/ENU/?guid=Create_Project), a **Budget Code Template** must be created before adding or importing budget items.
 
 2. Work with Autodesk Takeoff, upload 3D models or 2D Sheets, create a couple of packages, takeoff types and takeoff items.
 
 **Operate with App after setup, please watch the [Video](https://youtu.be/dkAdC8BMQRw) for the detail usage** 
-1. Select takeoff package under Forma project, it will generate the quantity info for each takeoff item, and calculate the budget based on the quantity and price which is stored in database as Price Book, then display you the result in table.
+1. Select takeoff package under Forma for Construction project, it will generate the quantity info for each takeoff item, and calculate the budget based on the quantity and price which is stored in database as Price Book, then display you the result in table.
 2. Click `Send to Cost`, it will import the generated budgets directly into Cost Management.
 
 ## Deployment
@@ -141,9 +141,9 @@ To deploy this application to Heroku, the **Callback URL** for APS must use your
 
 
 ## Tips & Tricks
-- **Cannot see my Forma projects**: Make sure to provision the APS App Client ID within the Forma hub to get access to document, Autodesk Forma indeed uses BIM 360 Admin Settings, this requires the Hub Admin permission.[learn more here](https://aps.autodesk.com/blog/bim-360-docs-provisioning-forge-apps). 
+- **Cannot see my Forma for Construction projects**: Make sure to provision the APS App Client ID within the Forma for Construction Account to get access to document, Forma for Construction indeed uses BIM 360 Admin Settings, this requires the Hub Admin permission.[learn more here](https://aps.autodesk.com/blog/bim-360-docs-provisioning-forge-apps). 
 
-- Only Forma projects are listed, BIM 360 projects are not supported.
+- Only Forma for Construction projects are listed, BIM 360 projects are not supported.
 
 - Before using the app, user needs to activate and setup takeoff service, upload 3D models or 2D Sheets, create a couple of packages, takeoff types and takeoff items.
 
@@ -156,15 +156,15 @@ To deploy this application to Heroku, the **Callback URL** for APS must use your
  
 ## Further Reading
 **Document**:
-- [Data Management API](https://developer.autodesk.com/en/docs/data/v2/overview/)
+- [Forma Data Management API](https://developer.autodesk.com/en/docs/data/v2/overview/)
 - [BIM 360 API](https://aps.autodesk.com/en/docs/bim360/v1/overview/) and [App Provisioning](https://aps.autodesk.com/blog/bim-360-docs-provisioning-forge-apps)
-- [Forma API](https://aps.autodesk.com/en/docs/acc/v1/overview/)
+- [Forma for Construction API](https://aps.autodesk.com/en/docs/acc/v1/overview/)
 - [How to use Forma Takeoff](https://help.autodesk.com/view/TAKEOFF/ENU/?guid=Getting_Started_Takeoff)
 - [How to use Forma Cost Management](https://help.autodesk.com/view/BUILD/ENU/?guid=Cost_Overview)
 
 
 **Tutorials**:
-- [View Forma or BIM 360 Models](https://tutorials.autodesk.io/tutorials/hubs-browser/)
+- [View Forma for Construction or BIM 360 Models](https://tutorials.autodesk.io/tutorials/hubs-browser/)
 
 **Blogs**:
 - [APS Blog](https://aps.autodesk.com/categories/bim-360-api)
