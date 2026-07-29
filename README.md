@@ -90,6 +90,7 @@ Mac OSX/Linux (Terminal)
     export APS_CLIENT_SECRET=<<YOUR CLIENT SECRET>>
     export APS_CALLBACK_URL=<<YOUR CALLBACK URL>>
     export OAUTH_DATABASE="mongodb+srv://<username>:<password>@<clustername>-<njl8m>.mongodb.net>>"
+    export SESSION_SECRET=<<A LONG RANDOM STRING USED TO SIGN SESSION COOKIES>>
 
     npm start
 
@@ -100,6 +101,7 @@ Windows (use **Node.js command line** from Start menu)
     set APS_CLIENT_SECRET=<<YOUR CLIENT SECRET>>
     set APS_CALLBACK_URL=<<YOUR CALLBACK URL>>
     set OAUTH_DATABASE="mongodb+srv://<username>:<password>@<clustername>-<njl8m>.mongodb.net>>"
+    set SESSION_SECRET=<<A LONG RANDOM STRING USED TO SIGN SESSION COOKIES>>
 
     npm start
 
@@ -110,7 +112,8 @@ Windows (use **PowerShell**)
     $env:APS_CLIENT_SECRET="YOUR CLIENT SECRET"
     $env:APS_CALLBACK_URL="YOUR CALLBACK URL"
     $env:OAUTH_DATABASE="mongodb+srv://<username>:<password>@<clustername>-<njl8m>.mongodb.net>>"
-    
+    $env:SESSION_SECRET="A LONG RANDOM STRING USED TO SIGN SESSION COOKIES"
+
     npm start
 
 ## Using the app

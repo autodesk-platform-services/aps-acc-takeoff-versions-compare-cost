@@ -25,7 +25,11 @@
      "OAUTH_DATABASE": {
         "description": "MongoDB connection string, e.g from MongoDB Atlas",
         "value": "mongodb+srv://<username>:<password>@<clustername>-<njl8m>.mongodb.net"
-    }     
+    },
+    "SESSION_SECRET": {
+        "description": "Random string used to sign session cookies",
+        "generator": "secret"
+    }
   },
   "website": "https://developer.autodesk.com/",
   "success_url": "/"

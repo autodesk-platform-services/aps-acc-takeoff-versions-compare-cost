@@ -24,9 +24,10 @@ module.exports = {
         callback_url: process.env.APS_CALLBACK_URL
     },
     database:{
-        // Use the default database if you don't want to customize
-        url : process.env.OAUTH_DATABASE?process.env.OAUTH_DATABASE:'mongodb+srv://forge:forge@forgesample-1gz3z.mongodb.net'
-    },    
+        // MongoDB connection string must be provided via the OAUTH_DATABASE
+        // environment variable. See README.md for setup instructions.
+        url : process.env.OAUTH_DATABASE
+    },
     scopes: {
         // Required scopes for the server-side application
         internal: ['bucket:create', 'bucket:read', 'data:read', 'data:create', 'data:write'],

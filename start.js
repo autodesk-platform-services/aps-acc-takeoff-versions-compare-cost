@@ -26,13 +26,21 @@ if (config.credentials.client_id == null || config.credentials.client_secret == 
     console.error('Missing APS_CLIENT_ID or APS_CLIENT_SECRET env. variables.');
     return;
 }
+if (config.database.url == null) {
+    console.error('Missing OAUTH_DATABASE env. variable.');
+    return;
+}
+if (process.env.SESSION_SECRET == null) {
+    console.error('Missing SESSION_SECRET env. variable.');
+    return;
+}
 const app = express();
 var server = require('http').Server(app);
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieSession({
     name: 'aps_session',
-    keys: ['aps_secure_key'],
+    keys: [process.env.SESSION_SECRET],
     maxAge: 14 * 24 * 60 * 60 * 1000 // 14 days, same as refresh token
 }));
 app.use(express.json({ limit: '50mb' }));
